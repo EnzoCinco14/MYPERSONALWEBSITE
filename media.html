@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="media.css">
+    <title>My Media</title>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="button-container">
+                <button onclick="goToHomePage()">Home</button>
+                <button onclick="goToSection('biography')">Biography/Skills</button>
+                <button onclick="goToPhotoGalleryDump()">Photo Gallery Dump</button>
+                <button onclick="goToMediaSection()">My Media</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="media-container">
+        <h2>Welcome to My Media Page</h2>
+        <div class="additional-buttons">
+            <button onclick="goToMyBeat()">My Beat</button>
+            <button onclick="goToMyKindOfFilm()">My Kind of Film</button>
+        </div>
+    </div>
+
+    <script>
+        function goToSection(sectionId) {
+            window.location.href = sectionId + '.html';
+        }
+
+        function goToHomePage() {
+            window.location.href = 'index.html';
+        }
+
+        function goToMyBeat() {
+            window.location.href = 'mybeats.html';
+        }
+
+        function goToMyKindOfFilm() {
+            window.location.href = 'mykindoffilm.html';
+        }
+
+        function goToMediaSection() {
+            window.location.href = 'mymedia.html';
+        }
+
+        function goToPhotoGalleryDump() {
+            window.location.href = 'photogallerydump.html';
+        }
+    </script>
+</body>
+</html>

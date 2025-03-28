@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Places</title>
+    <link href="dreamplaces.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html" class="nav-link">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="biography.html" class="nav-link">
+            <i class="fas fa-user"></i> Biography
+        </a>
+        <a href="skills.html" class="nav-link">
+            <i class="fas fa-tools"></i> Skills
+        </a>
+        <a href="resume.html" class="nav-link">
+            <i class="fas fa-file-alt"></i> Resume
+        </a>
+        <a href="gallerydump.html" class="nav-link">
+            <i class="fas fa-images"></i> Gallery Dump
+        </a>
+        <a href="mybeat.html" class="nav-link">
+            <i class="fas fa-music"></i> My Beat
+        </a>
+        <a href="tvshows.html" class="nav-link">
+            <i class="fas fa-tv"></i> TV Shows
+        </a>
+        <a href="mymovies.html" class="nav-link">
+            <i class="fas fa-film"></i> Movies
+        </a>
+        <a href="dreamplace.html" class="nav-link active">
+            <i class="fas fa-plane-departure"></i> Dream Places
+        </a>
+        <a href="bucketlist.html" class="nav-link">
+            <i class="fas fa-list"></i> Bucket List
+        </a>
+    </nav>
+
+    <div class="container">
+        <h1>My Dream Places</h1>
+        <div class="instructions">
+            <p>Welcome to my dream destinations! Click on any highlighted country on the map below to discover why these places captivate my imagination. Each destination features stunning photos and personal insights about what makes it special to me.</p>
+        </div>
+        <div class="map-container">
+            <img src="world-map.svg" alt="World Map" usemap="#dream-map" class="world-map">
+            <map name="dream-map">
+                <!-- Japan -->
+                <area target="" alt="Japan" title="Japan" href="japan.html" coords="760,140,787,177" shape="rect">
+                <!-- Italy -->
+                <area title="Italy" shape="rect" coords="451,158,470,188" href="italy.html" alt="Italy">
+                <!-- New Zealand -->
+                <area title="New Zealand" shape="poly" coords="840,440,850,430,860,440,855,450,845,445" href="newzealand.html" alt="New Zealand">
+                <!-- Iceland -->
+                <area target="" alt="Ice Land" title="Ice Land" href="iceland.html" coords="383,82,400,94" shape="rect">
+                <!-- Brazil -->
+                <area alt="Brazil" title="Brazil" href="brazil.html" coords="218,279,199,395,266,302,256,299" shape="poly">
+                <area alt="Brazil" title="Brazil" href="brazil.html" coords="196,392,237,443,276,417,208,430,228,437,266,305,247,324,199,398" shape="poly">
+                <area alt="Brazil" title="Brazil" href="brazil.html" coords="221,392,208,430" shape="rect">
+                <area alt="Brazil" title="Brazil" href="brazil.html" coords="199,401,208,430,279,398" shape="poly">
+                <area alt="Brazil" title="Brazil" href="brazil.html" coords="266,305,288,344,292,382,228,433" shape="poly">
+                <area alt="Brazil" title="Brazil" href="brazil.html" coords="288,382,218,437,276,421,282,414" shape="poly">
+                <area alt="Brazil" title="Brazil" href="brazil.html" coords="279,417,208,427,253,437,224,440,263,433" shape="poly">
+            </map>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const image = document.querySelector('.world-map');
+            const map = document.querySelector('map[name="dream-map"]');
+            const areas = map.getElementsByTagName('area');
+
+            function resizeMap() {
+                const originalWidth = 1000; // Original SVG width
+                const originalHeight = 500; // Original SVG height
+                const currentWidth = image.clientWidth;
+                const currentHeight = image.clientHeight;
+
+                const widthScale = currentWidth / originalWidth;
+                const heightScale = currentHeight / originalHeight;
+
+                for (let i = 0; i < areas.length; i++) {
+                    const area = areas[i];
+                    const originalCoords = area.getAttribute('data-original-coords') || area.getAttribute('coords');
+                    area.setAttribute('data-original-coords', originalCoords);
+
+                    const coords = originalCoords.split(',').map(coord => parseFloat(coord));
+                    const newCoords = coords.map((coord, index) => 
+                        index % 2 === 0 ? Math.round(coord * widthScale) : Math.round(coord * heightScale)
+                    );
+
+                    area.setAttribute('coords', newCoords.join(','));
+                }
+            }
+
+            // Initialize map when image is loaded
+            if (image.complete) {
+                resizeMap();
+            } else {
+                image.addEventListener('load', resizeMap);
+            }
+
+            // Resize map when window is resized
+            window.addEventListener('resize', resizeMap);
+
+            // Add hover effects
+            Array.from(areas).forEach(area => {
+                area.addEventListener('mouseenter', function() {
+                    this.style.cursor = 'pointer';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

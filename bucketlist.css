@@ -1,0 +1,147 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #2c3e50;
+    padding: 15px 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    background-color: #3498db;
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background-color: rgba(52, 152, 219, 0.2);
+}
+
+/* Content Styles */
+/* Keep existing Global and Navigation Styles */
+
+.content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 2.8em;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.bucket-section {
+    margin-bottom: 50px;
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.bucket-section h2 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #3498db;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.accomplished h2 i {
+    color: #27ae60;
+}
+
+.future h2 i {
+    color: #f1c40f;
+}
+
+.bucket-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.bucket-item {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.bucket-item:hover {
+    transform: translateY(-5px);
+}
+
+.bucket-item h3 {
+    color: #2c3e50;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+
+.bucket-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bucket-item li {
+    margin: 12px 0;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.4;
+}
+
+.bucket-item li::before {
+    content: "•";
+    position: absolute;
+    left: 8px;
+    color: #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bucket-list {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .bucket-section h2 {
+        font-size: 1.8em;
+    }
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="500" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+    <!-- World Map Background -->
+    <rect width="1000" height="500" fill="#e6f3ff"/>
+    
+    <!-- Simplified Continents -->
+    <!-- North America -->
+    <path d="M150,80 L280,80 Q300,150 250,200 L180,220 Q150,180 150,80" fill="#d4d4d4"/>
+    
+    <!-- South America -->
+    <path d="M220,280 Q270,290 290,340 Q300,380 280,420 Q250,450 220,440 Q190,420 200,380 Q210,320 220,280" fill="#4ecdc4" id="brazil-region">
+        <title>Brazil</title>
+    </path>
+    
+    <!-- Europe -->
+    <path d="M400,100 Q450,80 500,100 L480,150 Q420,140 400,100" fill="#d4d4d4"/>
+    
+    <!-- Africa -->
+    <path d="M400,200 Q450,180 500,200 L520,300 Q450,350 400,200" fill="#d4d4d4"/>
+    
+    <!-- Asia -->
+    <path d="M550,80 Q700,100 800,150 L750,250 Q600,200 550,80" fill="#d4d4d4"/>
+    
+    <!-- Australia -->
+    <path d="M700,300 Q750,280 800,300 L780,350 Q730,340 700,300" fill="#d4d4d4"/>
+    
+    <!-- Japan -->
+    <path d="M770,140 Q775,145 780,150 Q790,160 785,170 Q780,180 775,175 Q770,170 765,160 Q760,150 770,140" fill="#ff6b6b" id="japan-region">
+        <title>Japan</title>
+    </path>
+    <text x="775" y="155" fill="#333" font-size="10" text-anchor="middle">Japan</text>
+    
+    <!-- Italy -->
+    <path d="M455,160 Q460,155 465,160 Q470,170 468,180 Q465,190 460,185 Q455,180 453,170 Q452,165 455,160" fill="#96ceb4" id="italy-region">
+        <title>Italy</title>
+    </path>
+    <text x="460" y="175" fill="#333" font-size="10" text-anchor="middle">Italy</text>
+    
+    <!-- New Zealand -->
+    <path d="M835,420 Q845,415 850,420 Q855,425 853,435 Q850,440 845,438 Q840,435 838,430 Q835,425 835,420" fill="#45b7d1" id="newzealand-region">
+        <title>New Zealand</title>
+    </path>
+    <text x="845" y="430" fill="#333" font-size="10" text-anchor="middle">NZ</text>
+    
+    <!-- Iceland -->
+    <path d="M385,85 Q390,80 395,82 Q400,85 398,90 Q395,95 390,93 Q385,90 383,88 Q382,86 385,85" fill="#ffd93d" id="iceland-region">
+        <title>Iceland</title>
+    </path>
+    <text x="390" y="95" fill="#333" font-size="10" text-anchor="middle">Iceland</text>
+    
+    <!-- Brazil Label -->
+    <text x="240" y="360" fill="#333" font-size="12" text-anchor="middle">Brazil</text>
+</svg>
